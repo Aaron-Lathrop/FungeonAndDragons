@@ -20,24 +20,14 @@
 			sizes="16x16"
 			href="assets/favicon/favicon-16x16.png"
 		/>
-		<link rel="manifest" href="/site.webmanifest" />
-
+		<link rel="manifest" href="site.webmanifest" />
 		<link rel="stylesheet" href="style.css" />
 		<title>Fungeon and Dragons</title>
 	</head>
-	<body>
-		<main>
-			<h1>Fungeon and Dragons</h1>
-			<div>
-				<img
-					src="assets/GroupLogo.png"
-					alt="Knight kissing a dragon next to a confused princess."
-				/>
-				<h2
-					>Fungeon Under Construction <br />
-					Coming Soon
-				</h2>
-			</div>
-		</main>
+	<noscript>
+		<strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+	  </noscript>
+	  <div id="app"></div>
+	  <!-- built files will be auto injected -->
 	</body>
 </html>
