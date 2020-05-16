@@ -1,18 +1,18 @@
 <template>
 	<div id="app">
-		<Header />
+		<nav-bar />
 		<under-construction />
 	</div>
 </template>
 
 <script>
 import UnderConstruction from "./components/UnderConstruction.vue";
-import Header from "./components/Header.vue";
+import NavBar from "./components/NavBar.vue";
 
 export default {
 	name: "App",
 	components: {
-		Header,
+		NavBar,
 		UnderConstruction,
 	},
 };

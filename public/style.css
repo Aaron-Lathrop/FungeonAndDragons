@@ -9,6 +9,14 @@
 	margin: auto;
 }
 
+.hide {
+	display: none;
+}
+
+.show {
+	display: initial;
+}
+
 main {
 	position: absolute;
 	top: 50%;
