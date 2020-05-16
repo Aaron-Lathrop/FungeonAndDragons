@@ -41,6 +41,21 @@ body {
   margin: auto;
 }
 
+.title {
+  font-size: 25px;
+  text-align: center;
+}
+.content {
+  font-size: 16px;
+  line-height: 1.35;
+  max-width: 800px;
+  margin: auto;
+
+  & p {
+    margin: 10px;
+  }
+}
+
 .hide {
   display: none;
 }

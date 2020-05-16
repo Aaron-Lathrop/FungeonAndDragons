@@ -60,6 +60,7 @@ export default {
   & a {
     display: block;
     cursor: pointer;
+    margin: 15px 0;
   }
 }
 
@@ -75,6 +76,10 @@ export default {
   & a {
     color: #cbf2ca;
     text-decoration: none;
+  }
+
+  & a:hover {
+    text-decoration: underline;
   }
 
   & ul {
@@ -113,7 +118,7 @@ export default {
 
       & .nav-link {
         display: inline-flex;
-        margin-right: 25px;
+        margin: 0 25px 0 0;
       }
 
       & .nav-logo {
