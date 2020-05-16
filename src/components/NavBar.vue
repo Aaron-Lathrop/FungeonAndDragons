@@ -1,11 +1,13 @@
 <template>
   <nav id="navBar" class="nav">
     <ul class="container">
-      <li class="nav-logo">Fungeon & Dragons</li>
+      <li class="nav-logo">
+        <router-link to="/">Fungeon & Dragons</router-link>
+      </li>
       <li class="nav-link-container slidein" :class="{ hide: hideNavLinks }">
-        <a class="nav-link">Adventures</a>
-        <a class="nav-link">Characters</a>
-        <a class="nav-link">About</a>
+        <router-link to="/adventures" class="nav-link">Adventures</router-link>
+        <router-link to="/characters" class="nav-link">Characters</router-link>
+        <router-link to="/about" class="nav-link">About</router-link>
       </li>
       <li @click="toggleNavLinks()">
         <mobile-menu />
@@ -70,6 +72,11 @@ export default {
   max-width: 100vw;
   position: relative;
 
+  & a {
+    color: #cbf2ca;
+    text-decoration: none;
+  }
+
   & ul {
     display: flex;
     display: -ms-flexbox;
@@ -86,7 +93,6 @@ export default {
       font-size: 16px;
       font-weight: bold;
       margin-right: 55px;
-      /* min-width: 236.141px; */
     }
   }
 }

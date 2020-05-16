@@ -1,22 +1,18 @@
 <template>
   <div id="app">
     <nav-bar />
-    <adventure-log />
-    <under-construction class="hide" />
+    <router-view />
   </div>
 </template>
 
 <script>
-import AdventureLog from "./components/AdventureLog";
+// import AdventureLog from "./components/AdventureLog";
 import NavBar from "./components/NavBar";
-import UnderConstruction from "./components/UnderConstruction";
 
 export default {
   name: "App",
   components: {
-    AdventureLog,
-    NavBar,
-    UnderConstruction
+    NavBar
   }
 };
 </script>
