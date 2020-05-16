@@ -36,6 +36,10 @@ export default {
   margin: 0;
 }
 
+body {
+  height: 100vh;
+}
+
 .container {
   max-width: 1200px;
   margin: auto;

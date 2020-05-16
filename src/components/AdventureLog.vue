@@ -27,6 +27,7 @@ export default {
 #adventureLog {
   .title {
     font-size: 25px;
+    text-align: center;
   }
   .content {
     font-size: 16px;
