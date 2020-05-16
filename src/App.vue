@@ -1,30 +1,63 @@
 <template>
-	<div id="app">
-		<nav-bar />
-		<under-construction />
-	</div>
+  <div id="app">
+    <nav-bar />
+    <adventure-log />
+    <under-construction class="hide" />
+  </div>
 </template>
 
 <script>
-import UnderConstruction from "./components/UnderConstruction.vue";
-import NavBar from "./components/NavBar.vue";
+import AdventureLog from "./components/AdventureLog";
+import NavBar from "./components/NavBar";
+import UnderConstruction from "./components/UnderConstruction";
 
 export default {
-	name: "App",
-	components: {
-		NavBar,
-		UnderConstruction,
-	},
+  name: "App",
+  components: {
+    AdventureLog,
+    NavBar,
+    UnderConstruction
+  }
 };
 </script>
 
-<style>
+<style lang="less">
 #app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
-	/* margin-top: 60px; */
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  /* margin-top: 60px; */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: initial;
+}
+
+.m- {
+  &10 {
+    margin: 10px;
+  }
+  &15 {
+    margin: 15px;
+  }
+  &20 {
+    margin: 20px;
+  }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav">
+  <nav id="navBar" class="nav">
     <ul class="container">
       <li class="nav-logo">Fungeon & Dragons</li>
       <li class="nav-link-container slidein" :class="{ hide: hideNavLinks }">
@@ -57,6 +57,7 @@ export default {
 
   & a {
     display: block;
+    cursor: pointer;
   }
 }
 

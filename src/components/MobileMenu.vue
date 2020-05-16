@@ -1,5 +1,5 @@
 <template>
-  <div class="menu-container">
+  <div id="mobileMenu" class="menu-container">
     <div class="bar1"></div>
     <div class="bar2"></div>
     <div class="bar3"></div>
