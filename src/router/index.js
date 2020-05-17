@@ -32,10 +32,14 @@ const routes = [
 		component: () =>
 			import(/* webpackChunkName: "about" */ "../views/About.vue"),
 	},
+	{ path: "*", component: Home },
 ];
 
 const router = new VueRouter({
-	mode: "history",
+	// mode: "history",
+	hash: true,
+	transitionOnLoad: true,
+	root: "/",
 	routes,
 });
 export default router;
