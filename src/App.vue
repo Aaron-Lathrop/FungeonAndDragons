@@ -42,6 +42,7 @@ body {
 }
 
 .title {
+  margin: 20px;
   font-size: 25px;
   text-align: center;
 }
