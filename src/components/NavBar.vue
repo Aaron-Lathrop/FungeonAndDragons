@@ -72,6 +72,7 @@ export default {
   box-shadow: 0px 2px 6px #ccc;
   max-width: 100vw;
   position: relative;
+  z-index: 100;
 
   & a {
     color: #cbf2ca;
