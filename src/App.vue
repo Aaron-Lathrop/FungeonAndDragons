@@ -35,20 +35,23 @@ export default {
 body {
   height: 100vh;
 }
-
+.flex {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+}
 .container {
   max-width: 1200px;
   margin: auto;
 }
-
 .title {
   margin: 20px;
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
 }
 .content {
-  font-size: 16px;
-  line-height: 1.35;
+  font-size: 19px;
+  line-height: 31px;
   max-width: 800px;
   margin: auto;
 

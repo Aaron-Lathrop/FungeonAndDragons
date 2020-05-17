@@ -1,11 +1,14 @@
 <template>
-  <div class="characters">
+  <div class="characters m-20">
     <div class="title">Characters</div>
-    <ul>
-      <li v-for="character in characters" :key="character.name">
-        <div>
-          <img class="character-img" :src="character.avatar" :alt="character.name" />
-          {{ character.name }}
+    <ul class="container">
+      <li class="content" v-for="character in characters" :key="character.name">
+        <h3 class="characters-title">{{ character.name }}</h3>
+        <div class="characters-container">
+          <img class="characters-img" :src="character.avatar" :alt="character.name" />
+          <div
+            class="characters-description"
+          >"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
         </div>
       </li>
     </ul>
@@ -77,14 +80,29 @@ ul {
   list-style-type: none;
 }
 li {
-  border: 2px solid black;
+  margin: 20px auto;
+  padding: 35px 25px;
+  border: 2px solid #090809;
   border-radius: 7px;
-  margin: 15px;
-  padding: 45px 25px;
+  box-shadow: 0px 2px 6px #ccc;
 }
-
-.character-img {
-  height: 150px;
-  width: 150px;
+.characters {
+  &-container {
+    // align-items: center;
+    text-align: center;
+  }
+  &-title {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  &-img {
+    margin-right: 20px;
+    height: 200px;
+    width: 200px;
+  }
+  &-description {
+    text-align: left;
+  }
 }
 </style>
