@@ -7,8 +7,8 @@
 		"acceptance:build": "vue-cli-service build --dest dist-acceptance",
 		"acceptance:deploy": "bash deploy-acceptance.sh",
 		"lint": "vue-cli-service lint",
-		"prod:serve": "vue-cli-service serve",
-		"prod:build": "vue-cli-service build",
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build",
 		"prod:deploy": "bash deploy-prod.sh"
 	},
 	"dependencies": {
