@@ -37,6 +37,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "../styles/mixins.less";
+
 @keyframes slidein {
   0% {
     right: -200px;
@@ -54,28 +56,28 @@ export default {
   position: absolute;
   top: 60px;
   right: 0;
-  padding: 25px 40px;
-  background-color: #090809;
+  padding: 15px 40px;
+  background-color: @black;
 
-  & a {
+  & .nav-link {
     display: block;
     cursor: pointer;
-    margin: 15px 0;
+    margin: 25px 0;
   }
 }
 
 .nav {
   margin: auto;
   padding: 15px;
-  color: #cbf2ca;
-  background-color: #090809;
-  box-shadow: 0px 2px 6px #ccc;
+  color: @green;
+  background-color: @black;
   max-width: 100vw;
   position: relative;
   z-index: 100;
+  .shadow();
 
   & a {
-    color: #cbf2ca;
+    color: @green;
     text-decoration: none;
   }
 
@@ -84,17 +86,13 @@ export default {
   }
 
   & ul {
-    display: flex;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+    .flex();
     align-items: center;
     list-style-type: none;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
     & .nav-logo {
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
+      .flex();
       flex: 1 auto;
       font-size: 16px;
       font-weight: bold;
