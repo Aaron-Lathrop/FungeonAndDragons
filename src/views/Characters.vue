@@ -101,6 +101,7 @@ li {
   &-img {
     margin-right: 20px;
     #square(200px);
+    .shadow();
   }
   &-description {
     text-align: left;
