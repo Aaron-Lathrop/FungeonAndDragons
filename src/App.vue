@@ -34,12 +34,9 @@ export default {
 
 body {
   height: 100vh;
+  background-color: #fffffd;
 }
-.flex {
-  display: flex;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-}
+
 .container {
   max-width: 1200px;
   margin: auto;

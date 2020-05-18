@@ -1,7 +1,7 @@
 <template>
-  <div id="adventureLog" class="m-20">
+  <div id="adventureLog">
     <div class="container">
-      <h1 class="title m-20">Phuk's Fucking Story</h1>
+      <h1 class="title">Phuk's Fucking Story</h1>
       <div class="content">
         <p>
           At the beginning of the quest, Phuk came to, perplexed to find
@@ -70,6 +70,8 @@ export default {
 
 <style lang="less" scoped>
 #adventureLog {
+  margin: 20px;
+
   .title {
     font-size: 25px;
     text-align: center;

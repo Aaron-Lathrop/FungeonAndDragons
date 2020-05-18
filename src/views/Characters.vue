@@ -1,5 +1,5 @@
 <template>
-  <div class="characters m-20">
+  <div class="characters">
     <div class="title">Characters</div>
     <ul class="container">
       <li class="content" v-for="character in characters" :key="character.name">
@@ -76,30 +76,31 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "../styles/mixins.less";
 ul {
   list-style-type: none;
 }
 li {
   margin: 20px auto;
   padding: 35px 25px;
-  border: 2px solid #090809;
+  border: 1.5px solid #090809;
   border-radius: 7px;
-  box-shadow: 0px 2px 6px #ccc;
+  .shadow();
 }
 .characters {
+  margin: 20px;
+
   &-container {
-    // align-items: center;
     text-align: center;
   }
   &-title {
-    font-size: 20px;
+    font-size: 21px;
     text-align: center;
     margin-bottom: 15px;
   }
   &-img {
     margin-right: 20px;
-    height: 200px;
-    width: 200px;
+    #square(200px);
   }
   &-description {
     text-align: left;
