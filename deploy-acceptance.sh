@@ -15,6 +15,6 @@ git init
 git add -A
 git commit -m 'deploy-acceptance'
 
-git push -f https://github.com/Aaron-Lathrop/FungeonAndDragons develop:gh-pages
+git push -f https://github.com/Aaron-Lathrop/FungeonAndDragons master:gh-pages
 
 cd -
