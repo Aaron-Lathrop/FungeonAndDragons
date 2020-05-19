@@ -7,7 +7,9 @@ set -e
 npm run prod:build
 
 # navigate into the build output directory
+cd dist
 
+git init
 git add .
 git commit -m "deploy"
 git push

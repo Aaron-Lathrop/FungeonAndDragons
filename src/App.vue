@@ -34,20 +34,21 @@ export default {
 
 body {
   height: 100vh;
+  background-color: #fffffd;
 }
 
 .container {
   max-width: 1200px;
   margin: auto;
 }
-
 .title {
-  font-size: 25px;
+  margin: 20px;
+  font-size: 30px;
   text-align: center;
 }
 .content {
-  font-size: 16px;
-  line-height: 1.35;
+  font-size: 19px;
+  line-height: 31px;
   max-width: 800px;
   margin: auto;
 
