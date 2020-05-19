@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "../views/Home";
 import AdventureLog from "../views/AdventureLog";
 import Characters from "../views/Characters";
+import Compendium from "../views/Compendium";
 import VueRouter from "vue-router";
 
 Vue.use(Router);
@@ -12,6 +13,11 @@ const routes = [
 		path: "/",
 		name: "home",
 		component: Home,
+	},
+	{
+		path: "/compendium",
+		name: "compendium",
+		component: Compendium,
 	},
 	{
 		path: "/adventures",
