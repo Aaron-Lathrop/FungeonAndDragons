@@ -1,11 +1,18 @@
 <template>
   <div id="adventureLog">
     <div class="container">
-      <h1 class="title">{{adventureLogs.title}}</h1>
-      <div class="content" v-for="(entry, index) in adventureLogs.entries" :key="`entry-${index}`">
-        <p class="sub-heading">{{entry.subHeading}}</p>
-        <p v-for="(line, index) in entry.content" :key="`line-${index}`" v-html="line"></p>
+      <div class="adventure" v-if="hasSufficentData">
+        <h1 class="title">{{adventureLogs.title}}</h1>
+        <div
+          class="content"
+          v-for="(entry, index) in adventureLogs.entries"
+          :key="`entry-${index}`"
+        >
+          <p class="sub-heading">{{entry.subHeading}}</p>
+          <p v-for="(line, index) in entry.content" :key="`line-${index}`">{{line}}</p>
+        </div>
       </div>
+      <div class="title" v-else>Looks like there are no adventures quite yet...</div>
     </div>
   </div>
 </template>
@@ -19,8 +26,15 @@ export default {
   },
   computed: {
     ...mapGetters(["allAdventureLogs"]),
+    hasSufficentData() {
+      return (
+        this.adventureLogs &&
+        this.adventureLogs.entries &&
+        this.adventureLogs.entries.length
+      );
+    },
     adventureLogs() {
-      return this.allAdventureLogs || [];
+      return this.allAdventureLogs || {};
     }
   },
   methods: {
