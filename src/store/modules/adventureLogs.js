@@ -1,4 +1,4 @@
-import axios from "axios";
+//import axios from "axios";
 
 const state = {
 	adventureLogs: [],
@@ -9,10 +9,19 @@ const getters = {
 };
 
 const actions = {
-	async fetchAdventureLogs({ commit }) {},
+	async fetchAdventureLogs({ commit }) {
+		// const response = await axios.get(
+		//     "https://jsonplaceholder.typicode.com/todo"
+		// )
+		const response = await require("../hardcodedata/adventureLogs.json");
+		commit("setAdventureLogs", response);
+	},
 };
 
-const mutations = {};
+const mutations = {
+	setAdventureLogs: (state, adventureLogs) =>
+		(state.adventureLogs = adventureLogs),
+};
 
 export default {
 	state,
