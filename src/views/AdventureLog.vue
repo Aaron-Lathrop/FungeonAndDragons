@@ -1,72 +1,48 @@
 <template>
   <div id="adventureLog">
     <div class="container">
-      <h1 class="title">Phuk's Fucking Story</h1>
-      <div class="content">
-        <p class="sub-heading">I</P>
-
-        <p>At the beginning of the quest, Phuk came to, perplexed to find herself in a dark, foul-smelling shaft. Thankfully her night-vision allows her to see the path in front of her. She turned around and sees a creature she had never encountered before, a lime-green flaming skull. Though her knowledge is limited on this sort of creature, she knows that it’s not something to trifle with and proceeds to run down the cavern in front of her. Unfortunately she didn’t have good footing as she ran forward and tumbled, scraping her knee and rolling down an unlevel section but saw light coming in from some entry ahead of her. Glancing back, the flame-skull pursued her until she finally emerged outside where he surprisingly stopped.</p>
-
-        <p>Unbeknownst to her, six others emerged from this exit, having come from different tunnels all leading to the same field she currently stood.</p>
-
-        <p>Turning her head, Phuk spoke to the closest of these apparent strangers, “What the fuck was that?!”</p>
-
-        <p>He was as confused as her. She proceeds to ask, “Why were you in there?”</p>
-
-        <p>The stranger furrows his brow before he utters, “....I’m not sure.”</p>
-
-        <p>“Are you headed to Saint Doodlesburg too?” </p>
-
-        <p>He nods and peering off in the distance, Phuk can see a large bald man continue to run his crossbow drawn. She thought, “Had he engaged the flame-skull? Is he mad?”</p>
-
-        <p>In the corner of her eye she can see another smaller, perhaps a half-ling, running as fast as his two short legs carry him. He ran towards the closest person near him, clutching onto her leg like some scared child. Instead of comforting him, this person just kicked him off her leg, uttering words that were too distant to hear, Phuk is sure it was along the lines of, “Get off, half-ling!”</p>
-
-        <p>Turning around, looking at the opening, there is one flame-skull laughing menaichally. Another emerged out of the shaft that the bald creature had come from and blew a green flaming ball crashed, nearly hitting him. The other skulls emerge, looking onward to the flaming spectacle and all laugh. Phuk and the other strangers move away quickly from the quick spreading green flames burning the dry grass in the meadow. After swiftly moving further away, all congregate in the middle of the open field.</p>
-
-        <p>Phuk exclaims, “So that was oober scary! I have no idea why I was in that dark chamber. Do any of you?”</p>
-
-        <p>She sees all but one of the party shake their heads. The only one that nods is a blue dragonborn who looks familiar but she’s unable to recall his name. Was he famous or something?</p>
-
-        <p>The dragonborn replies, “Yes, I was told that was a short-cut. I’m running late to a show in Saint Doodlesberg.” </p>
-
-        <p>“He’s a performer of some sort,” Phuk notes.</p>
-
-        <p>“Are the rest of you heading to Saint Doodlesberg as well? If so, should we all stick together until we get to town? That was some scary shit!”, Phuk asks.</p>
-
-        <p>The group shrugs and nods agreeingly, not really saying much of anything.</p>
-
-        <p>Phuk thinks, “You’re a chatty bunch, aren’t ya?”</p>
-
-
-        <p class="sub-heading">II</p>
-
-        <p>Quietly, they all start to head east away from the green flames that continue to spread in the open field. Along the way they see some vege-pigmies, a three foot, plant-humanoid creature.It appears that a couple of members of the party are getting ready to draw their weapons. Phuk raises her right eyebrow.</p>
-
-        <p>Instead of drawing his weapon, the blue dragonborn takes a step forward speaking common, waving a hand, “Hi friend.”</p>
-
-        <p>The vege-pigmie grabs a rock and launches it at the dragonborn’s head hitting him in the forehead, gashing it and blood gushes down his face.”</p>
-
-        <p>He bursts, “What the fuck? You made me bleed my own blood just before my show!”</p>
-
-        <p>Freddie proceeds to cast a spell smirking, “I’m thinking salad.”</p>
-
-        <p>Meanwhile, Phuk rushes to a veggie-pigmie wielding her trident to strike it down and utterly misses one, two, three times. With ease the creature dodges each blow but does no better on its counter-attacks.</p>
-
-        <p>Other members of the party each approach the six different pigmies scattered across the meadow, all drawing weapons swinging and slashing, some effectively landing hits while others did equivalently as well as Phuk’s attempts. Finally Sebastian and Phuk are able to strike down the two creatures in front of them and turn heading toward the rest of the party still engrossed in battle.</p>
-
-        <p>When they get over towards Freddie, they see him cast another spell and immediately the vege-pigmie’s lip trembles, he grabs his abdomen grunting and soils himself. Somehow even though it is wearing an open loincloth, it manages to cover its rags in its own filth.</p> 
-
-        <p>After a few finishing blows, all six of the vege-pigmies lie lifeless on the ground. Party members go around to see if any of these creatures they slayed have anything of value to loot. Phuk looks over at Sebastian in complete disgust when he finds nothing of worth and proceeds to do a cavity search on this lifeless creature. When he didn’t find anything wrist deep he proceeded to go elbow deep until he finally determined the pigmie had nothing of value in its insides.</p> 
-
-        <p>Lark didn’t seem to have much luck either but rather than going digging for treasure as Sebastian had done, he decided that the pigmie’s body must be worth something and carried it stretched across his two arms like a sleeping child.</p>
+      <div class="adventure" v-if="hasSufficentData">
+        <h1 class="title">{{adventureLogs.title}}</h1>
+        <div
+          class="content"
+          v-for="(entry, index) in adventureLogs.entries"
+          :key="`entry-${index}`"
+        >
+          <p class="sub-heading">{{entry.subHeading}}</p>
+          <p v-for="(line, index) in entry.content" :key="`line-${index}`">{{line}}</p>
+        </div>
       </div>
+      <div class="title" v-else>Looks like there are no adventures quite yet...</div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
 export default {
-  name: "AdventureLog"
+  name: "AdventureLog",
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapGetters(["allAdventureLogs"]),
+    hasSufficentData() {
+      return (
+        this.adventureLogs &&
+        this.adventureLogs.entries &&
+        this.adventureLogs.entries.length
+      );
+    },
+    adventureLogs() {
+      return this.allAdventureLogs || {};
+    }
+  },
+  methods: {
+    ...mapActions(["fetchAdventureLogs"])
+  },
+  created() {
+    this.fetchAdventureLogs();
+  }
 };
 </script>
 
@@ -86,14 +62,12 @@ export default {
 
     & p {
       margin: 10px;
-
-      &.sub-heading {
-        font-weight: bold;
-        text-align: center;
-        margin-top: 25px;
-      }
+    }
+    .sub-heading {
+      font-weight: bold;
+      text-align: center;
+      margin-top: 25px;
     }
   }
-  
 }
 </style>
