@@ -1,12 +1,17 @@
 <template>
   <main>
     <h1>Fungeon and Dragons</h1>
-    <div>
-      <img src="../assets/GroupLogo.png" alt="Knight kissing a dragon next to a confused princess." />
+    <div class="logo">
+      <img
+        class="logo"
+        src="../assets/GroupLogo.png"
+        alt="Knight kissing a dragon next to a confused princess."
+      />
       <h2>
         Fungeon Under Construction
         <br />Coming Soon
       </h2>
+      <button onclick="googleLogin()">Google Login</button>
     </div>
   </main>
 </template>
@@ -18,6 +23,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "../styles/mixins.less";
 main {
   position: absolute;
   top: 50%;
@@ -28,5 +34,9 @@ main {
 h1,
 h2 {
   text-align: center;
+}
+
+.logo {
+  #square(362px);
 }
 </style>

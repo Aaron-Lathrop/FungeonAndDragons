@@ -41,3 +41,57 @@ export const getOrDefault = function(obj, key, defaultValue) {
 	}
 	return result;
 };
+
+// Example
+/* 
+if (isNull(user)) {
+	return [];
+}
+*/
+
+// Does not consider 0, -0, 0n, "", NaN, or booleans to be null
+export const isNull = function(value) {
+	if (typeof value === "undefined" || value === null) {
+		return true;
+	}
+	return false;
+};
+
+// Example
+// isNotNull(user) && user - returns user or false
+// Allows for more accurate null checking
+// Does not consider 0, -0, 0n, "", NaN, or booleans to be null
+export const isNotNull = function(value) {
+	if (typeof value !== "undefined" && value !== null) {
+		return true;
+	}
+	return false;
+};
+
+export const getValue = function(value) {
+	if (arguments.length === 0) {
+		throw new Error("getValue(value): must provide parameter 'value'");
+	}
+
+	if (isNotNull(value)) {
+		return value;
+	}
+	return false;
+};
+
+export const getValueOrDefault = function(value, defaultValue) {
+	if (arguments.length === 0) {
+		throw new Error(
+			`getValueOrDefault(value, defaultValue): must provide parameters 'value' and 'defaultValue'`
+		);
+	} else if (arguments.length === 1) {
+		throw new Error(
+			`getValueOrDefault(value, defaultValue): must provide parameter 'defaultValue'`
+		);
+	}
+
+	if (isNotNull(value)) {
+		return value;
+	}
+	return defaultValue;
+};

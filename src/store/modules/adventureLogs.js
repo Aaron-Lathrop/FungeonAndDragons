@@ -1,7 +1,7 @@
-//import axios from "axios";
+// import axios from "axios";
 
 const state = {
-	adventureLogs: [],
+	adventureLogs: null,
 };
 
 const getters = {
@@ -10,11 +10,15 @@ const getters = {
 
 const actions = {
 	async fetchAdventureLogs({ commit }) {
-		// const response = await axios.get(
-		//     "https://jsonplaceholder.typicode.com/todo"
-		// )
+		//const response = await axios.get("../hardcodedata/adventureLogs.json");
 		const response = await require("../hardcodedata/adventureLogs.json");
 		commit("setAdventureLogs", response);
+
+		// const test = await axios.get(
+		// 	"https://fungeonanddragons-e6e61.firebaseio.com"
+		// );
+		// console.log("testing");
+		// console.log(test);
 	},
 };
 

@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
+		"firebase:serve": "npm run build --watch && firebase serve",
 		"acceptance:serve": "vue-cli-service serve --dest dist-acceptance ",
 		"acceptance:build": "vue-cli-service build --dest dist-acceptance",
 		"acceptance:deploy": "bash deploy-acceptance.sh",
